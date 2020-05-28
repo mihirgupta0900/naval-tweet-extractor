@@ -1,0 +1,38 @@
+* {
+    background-color: #393e46;
+    color: #00adb5;
+}
+
+.title {
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    font-size: 2rem;
+}
+
+.content {
+    height: 80vh;
+    font-family: 'Chelsea Market', cursive;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 750px;
+    margin: 0 auto;
+}
+
+.footer {
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+a {
+    text-decoration: none;
+}
