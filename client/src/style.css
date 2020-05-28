@@ -16,13 +16,19 @@
 
 .content {
     height: 80vh;
-    font-family: 'Chelsea Market', cursive;
+    font-family: "Chelsea Market", cursive;
     font-size: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 750px;
+    width: 80%;
     margin: 0 auto;
+}
+
+@media screen and (max-width: 480px) {
+    .content {
+        font-size: 1.5rem;
+    }
 }
 
 .footer {
