@@ -1,5 +1,4 @@
 const Twitter = require("twitter");
-const ejs = require("ejs");
 const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
