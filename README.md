@@ -25,7 +25,7 @@ npm install
 Go back a directory and run the project using concurrently
 ```shell
 cd ..
-npm start
+npm run app
 ```
 Then go to http://localhost:3000 to visit the application.
 
