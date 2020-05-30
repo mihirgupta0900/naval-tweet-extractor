@@ -29,7 +29,6 @@ router.get("/getTweet", async (req, res) => {
         if (err) {
             res.statusCode(400).json(err);
         }
-        // const t0 = performance.now();
         tweets.forEach((tweet) => {
             const tweetId = tweet.id_str;
             const tweetText = tweet.full_text;
@@ -49,9 +48,6 @@ router.get("/getTweet", async (req, res) => {
                 }
             });
         });
-        // const t1 = performance.now();
-        // console.log(`Took ${(t1 - t0) / 1000} seconds to complete function 1`);
-        // const t2 = performance.now();
         Tweet.countDocuments().exec(function (err, count) {
             // Get a random entry
             var random = Math.floor(Math.random() * count);
@@ -61,13 +57,9 @@ router.get("/getTweet", async (req, res) => {
                 .skip(random)
                 .exec(function (err, result) {
                     // Tada! random user
-                    // console.log(result);
                     res.json(result.tweetText);
-                    // console.log(result.tweetText);
                 });
         });
-        // const t3 = performance.now();
-        console.log(`Took ${(t3 - t2) / 1000} seconds to complete function 2`);
     });
 });
 
