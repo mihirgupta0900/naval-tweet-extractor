@@ -29,6 +29,9 @@
     .content {
         font-size: 1.5rem;
     }
+    .content{
+        height: 65vh;
+    }
 }
 
 .footer {
