@@ -8,8 +8,6 @@ function App() {
         success: false,
     });
 
-    const API = "http://localhost:8080/api";
-
     const fetchTweet = () => {
         return fetch(`/api/getTweet`, {
             method: "GET",
