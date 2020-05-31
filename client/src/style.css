@@ -1,5 +1,5 @@
 * {
-    background-color: #393e46;
+    /* background-color: #393e46; */
     color: #00adb5;
 }
 
@@ -14,8 +14,20 @@
     font-size: 2rem;
 }
 
+.card {
+    border-radius: 28px;
+    background: #ffffff;
+    box-shadow: 9px 9px 20px #a6a6a6, -9px -9px 20px #ffffff;
+    width: 80%;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
 .content {
-    height: 80vh;
+    height: 70vh;
     font-family: "Chelsea Market", cursive;
     font-size: 2rem;
     display: flex;
@@ -25,11 +37,20 @@
     margin: 0 auto;
 }
 
+.refresh {
+    display: flex;
+    justify-content: center;
+}
+
+.refresh button {
+    padding: 10px;
+}
+
 @media screen and (max-width: 480px) {
     .content {
         font-size: 1.5rem;
     }
-    .content{
+    .content {
         height: 65vh;
     }
 }

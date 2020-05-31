@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from "react";
 import "./style.css";
+import loading from "./Assets/25.gif";
 
 function App() {
     const [values, setValues] = useState({
         tweet: "",
         error: "",
         success: false,
+        loading: true,
     });
 
     const fetchTweet = () => {
-        return fetch(`/api/getTweet`, {
+        setValues({ ...values, loading: true });
+        fetch(`/api/getTweet`, {
             method: "GET",
             headers: {
                 Accept: "application/json",
@@ -17,11 +20,25 @@ function App() {
         })
             .then((res) => res.json())
             .then((data) => {
-                setValues({ ...values, tweet: data, success: true });
+                setValues({
+                    ...values,
+                    tweet: data,
+                    success: true,
+                    loading: false,
+                });
             })
             .catch((err) => {
-                setValues({ ...values, error: err, success: false });
+                setValues({
+                    ...values,
+                    error: err,
+                    success: false,
+                    loading: false,
+                });
             });
+    };
+
+    const loadingGif = () => {
+        return <img src={loading} alt="" />;
     };
 
     useEffect(() => {
@@ -34,7 +51,12 @@ function App() {
                 <span className="container">Naval Ravikant Tweets</span>
             </div>
             <div className="content">
-                <div>{values.tweet}</div>
+                <div className="card">
+                    {values.loading ? loadingGif() : <div>{values.tweet}</div>}
+                </div>
+            </div>
+            <div className="refresh">
+                <button onClick={fetchTweet}>New Tweet</button>
             </div>
             <div className="footer">
                 <div className="">
