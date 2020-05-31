@@ -3,6 +3,7 @@ import "./style.css";
 import loading from "./Assets/25.gif";
 
 function App() {
+    // State managements
     const [values, setValues] = useState({
         tweet: "",
         error: "",
@@ -10,6 +11,7 @@ function App() {
         loading: true,
     });
 
+    // Method to fetch the tweets
     const fetchTweet = () => {
         setValues({ ...values, loading: true });
         fetch(`/api/getTweet`, {
